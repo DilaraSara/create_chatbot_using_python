@@ -3,14 +3,11 @@ import json
 import pickle
 import numpy as np
 import tensorflow as tf
-
 import nltk
 from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
-
-intents = json.loads(open('C:\Simplilearn\Python\Python projects\chatbot using python\chatbot\intents.json').read())
-
+intents = json.loads(open('/Users/dilarasara/create_chatbot_using_python/chatbot/intents.json').read())
 words = []
 classes = []
 documents = []
@@ -28,10 +25,8 @@ words = [lemmatizer.lemmatize(word) for word in words if word not in ignoreLette
 words = sorted(set(words))
 
 classes = sorted(set(classes))
-
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
-
+pickle.dump(words, open('chatbot/words.pkl', 'wb'))
+pickle.dump(classes, open('chatbot/classes.pkl', 'wb'))
 training = []
 outputEmpty = [0] * len(classes)
 
@@ -41,17 +36,14 @@ for document in documents:
     wordPatterns = [lemmatizer.lemmatize(word.lower()) for word in wordPatterns]
     for word in words:
         bag.append(1) if word in wordPatterns else bag.append(0)
-
     outputRow = list(outputEmpty)
     outputRow[classes.index(document[1])] = 1
     training.append(bag + outputRow)
 
 random.shuffle(training)
 training = np.array(training)
-
 trainX = training[:, :len(words)]
 trainY = training[:, len(words):]
-
 
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation = 'relu'))
@@ -64,7 +56,7 @@ sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+model.save('/Users/dilarasara/create_chatbot_using_python/chatbot/chatbot_model.h5')
 print('Done')
 
 

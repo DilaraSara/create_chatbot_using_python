@@ -3,23 +3,18 @@ import json
 import pickle
 import numpy as np
 import nltk
-
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('C:\Simplilearn\Python\Python projects\chatbot using python\chatbot\intents.json').read())
-
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbot_model.h5')
-
-
+intents = json.loads(open('/Users/dilarasara/create_chatbot_using_python/chatbot/intents.json').read())
+words = pickle.load(open('/Users/dilarasara/create_chatbot_using_python/chatbot/words.pkl', 'rb'))
+classes = pickle.load(open('/Users/dilarasara/create_chatbot_using_python/chatbot/classes.pkl', 'rb'))
+model = load_model('/Users/dilarasara/create_chatbot_using_python/chatbot/chatbot_model.h5')
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
     return sentence_words
-
 def bag_of_words (sentence):
     sentence_words = clean_up_sentence(sentence)
     bag = [0] * len(words)
@@ -28,7 +23,6 @@ def bag_of_words (sentence):
             if word == w:
                 bag[i] = 1
     return np.array(bag)
-
 def predict_class (sentence):
     bow = bag_of_words (sentence)
     res = model.predict(np.array([bow]))[0]
@@ -40,7 +34,6 @@ def predict_class (sentence):
     for r in results:
         return_list.append({'intent': classes [r[0]], 'probability': str(r[1])})
     return return_list
-
 def get_response(intents_list, intents_json):
     tag = intents_list[0]['intent']
     list_of_intents = intents_json['intents']
@@ -49,7 +42,6 @@ def get_response(intents_list, intents_json):
             result = random.choice (i['responses'])
             break
     return result
-
 print("GO! Bot is running!")
 
 while True:
@@ -57,4 +49,4 @@ while True:
     ints = predict_class (message)
     res = get_response (ints, intents)
     print (res)
-    
+
