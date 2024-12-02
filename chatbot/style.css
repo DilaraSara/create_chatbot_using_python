@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+.modal h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.container {
+    width: 100%;
+}
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Bu satırı ekledik */
+}
+
+.left {
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Telegraf&display=swap');
+
+.left h1 {
+    font-family: 'Telegraf', sans-serif; /* Telegraf fontunu belirledik */
+    font-size: 48px; /* Yazı boyutunu artırdık */
+    margin-top: 5px;
+    background: linear-gradient(135deg, #ffffff, #87cefa); /* Açık maviye geçiş yapan gradyan arka plan */
+    -webkit-background-clip: text; /* Metni gradyanla doldurmak için */
+    -webkit-text-fill-color: transparent; /* Metin rengini şeffaf yapmak için */
+}
+.logo {
+    width: 100px; /* İstediğiniz boyuta göre ayarlayın */
+    height: auto;
+}
+
+.right {
+    right: 0;
+    background: linear-gradient(135deg, #a3ffab, #00f260, #007bff);
+    color: #333;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, #a3ffab, #ffabac);
+    border-radius: 10px;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#chatbot {
+    background: linear-gradient(135deg, #4ecdc4, #556270); /* Gradient background */
+    padding: 30px 20px; /* Ayarlanmış padding */
+    border-radius: 20px; /* Daha yumuşak bir görünüm için artırılmış border radius */
+    width: 100%;
+    max-width: 400px;
+    margin: 175px auto 20px; /* Ayarlanmış margin */
+    text-align: center;
+    color: #000000; /* Beyaz metin rengi */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 3D efekti için gölge ekledik */
+}
+
+#chatbot h1 {
+    font-size: 28px; /* Yazı boyutunu artırdık */
+    margin-bottom: 20px; /* Daha iyi boşluklama için margin bottom artırıldı */
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Margin artırıldı */
+}
+
+.input-container input,
+.input-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Butonlar için border radius eklendi */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input-container input {
+    flex: 1;
+    margin-right: 10px; /* Giriş alanı ve buton arasındaki boşluk için margin eklendi */
+}
+
+.input-container button {
+    background-color: #87cefa; /* Mavi beyaz buton rengi */
+    color: #F0FFFF; /* Beyaz metin rengi */
+    transition: background-color 0.3s ease; /* Hover efekti için pürüzsüz geçiş */
+}
+
+.input-container button:hover {
+    background-color: #4682b4; /* Hover durumunda daha koyu mavi */
+}
+
+#soru {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+#gonderBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#gonderBtn:hover {
+    background-color: #0056b3;
+}
+
+#cevap {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    text-align: left;
+    min-height: 100px;
+}

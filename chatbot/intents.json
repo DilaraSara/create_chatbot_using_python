@@ -1,148 +1,63 @@
 {"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+        {"tag": "ogrenim_ucreti",
+            "patterns": [ "Öğrenim Ücretimi nasıl yatırabilirim?" ],
+            "responses": [ "Öğrenim ücretinizi Öğrenci Numaranız ile Vakıfbank’ın Türkiye genelindeki tüm şubelerin ATM ve Mobil Bankacılık hizmetlerinden ücretsiz yatırabilirsiniz." ],
          "context": [""]
         },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+            "patterns": [ "Öğrenim Ücretimi bulunduğum şehirden yatırabilir miyim?" ],
+            "responses": [ "Evet, öğrenim ücretinizi T.C. Kimlik Numaranız ile Türkiye Vakıflar Bankası'nın Türkiye genelindeki herhangi bir şubesine ait vezneden ücretsiz yatırabilirsiniz." ],
          "context": [""]
         },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-         "responses": ["My pleasure", "You're Welcome"],
+        {"tag": "Kayıt sırasında başka ücret talep edilmekte midir?",
+            "patterns": [ "Kayıt sırasında başka ücret talep edilmekte midir?" ],
+            "responses": [ "Hayır. II. Öğretim öğrencilerinin yatıracağı öğrenim harcı dışında hiçbir ücret talep edilmemektedir." ],
          "context": [""]
         },
         {"tag": "query",
-         "patterns": ["What is Simplilearn?"],
-         "responses": ["Simplilearn is the popular online Bootcamp & online courses learning platform "],
+            "patterns": [ "Yakınlarda yurt var mı? Hangi yurt var?" ],
+            "responses": [ "İl Merkezinde ve ilçelerde YURTKUR Bölge Müdürlüğüne ait yurtlar bulunmaktadır." ],
          "context": [""]
         },
   {
       "tag": "location_info",
-      "patterns": ["Where is the nearest restaurant?", "Can you tell me about this city's landmarks?"],
-      "responses": ["I can help you find information about locations."],
+    "patterns": [ "E-Devlet üzerinden kayıt yaptırdım evraklarımı ne zaman ve nasıl teslim edeceğim?" ],
+    "responses": [ "E-Devlet üzerinden kayıt yaptıran öğrencilerimiz ders alma haftasında evraklarını yerleştikleri okullara teslim edeceklerdir." ],
       "context": [""]
     },
     {
       "tag": "weather",
-      "patterns": ["What's the weather like today?", "Tell me about the weather"],
-      "responses": ["I can provide you with the current weather information."],
+        "patterns": [ "E-Devlet üzerinden kaydımı yaptırdım. Öğrenci belgemi nasıl alabilirim?" ],
+        "responses": [ "E-Devlet üzerinden yaptırdığınız kaydınızı tamamladıktan sonra e-devlet üzerinden veya OBS üzerinden talepte bulunarak öğrenci belgesi alabilirsiniz." ],
       "context": [""]
     },
   {
       "tag": "technology",
-      "patterns": ["Tell me about the latest technology news", "What's new in the tech world?"],
-      "responses": ["I can provide you with the latest technology news."],
+    "patterns": [ "Diploma, sertifika veya uzmanlık belgesini kaybettim 2.nüshayı nasıl alabilirim?" ],
+    "responses": [ "Diploma, geçici mezuniyet belgesi, sertifika veya uzmanlık belgesini kaybedenler, ulusal gazetelerin birine verilen kayıp ilan suretini eklediği dilekçe ile ilgili birime başvurur.Geçici mezuniyet belgesi verilmiş ise kaybedenlere diploması verilir. Tahribata uğraması nedeniyle orijinal şekil ile ibraz edilen diplomalar, sertifika ve uzmanlık belgeleri için de aynı yol izlenerek ikinci nüshaları verilir." ],
       "context": [""]
     },
     {
       "tag": "movies",
-      "patterns": ["Recommend me a good movie", "What's a popular movie these days?"],
-      "responses": ["I can recommend you some great movies."],
+        "patterns": [ "Yeni üye kaydı yaptım ama hala sisteme giremiyorum. Neden?" ],
+        "responses": [ "Üye kaydı yapıldıktan sonra sistem tarafından üye kayıt esnasında girdiğiniz e-posta adresine bir etkinleştirme kodu gönderilmektedir. Etkinleştirme işlemi yapılmadan sisteme giriş mümkün değildir. Öncelikle e-posta hesabınıza giderek size gönderilen etkinleştirme mesajındaki yönlendirmeleri takip ederek kullanıcı kaydınızı etkinleştiriniz." ],
       "context": [""]
     },
     {
       "tag": "food",
-      "patterns": ["What's a good recipe for dinner?", "Tell me a delicious dessert recipe"],
-      "responses": ["I can share some tasty recipes with you."],
+        "patterns": [ "" ],
+        "responses": [ "Yüklenecek resim JPEG formatında olmalıdır. Dosya boyutu en az 3KB, en fazla 2MB olmalıdır." ],
       "context": [""]
     },
-    {
-      "tag": "sports",
-      "patterns": ["Tell me about the latest sports news", "What's happening in the sports world?"],
-      "responses": ["I can provide you with the latest sports news."],
-      "context": [""]
-    },
-  {
-      "tag": "recommendation",
-      "patterns": ["Recommend me something", "What do you suggest?", "Any recommendations?"],
-      "responses": ["Sure, I recommend...", "I suggest trying..."],
-      "context": [""]
-    },
-    {
-      "tag": "current_time",
-      "patterns": ["What time is it?", "Can you tell me the current time?", "What's the time now?"],
-      "responses": ["The current time is...", "It's currently..."],
-      "context": [""]
-    },
-    {
-      "tag": "joke",
-      "patterns": ["Tell me a joke", "Do you know any jokes?", "Make me laugh"],
-      "responses": ["Sure, here's a joke for you:...", "Why did the chicken cross the road? To get to the other side!"],
-      "context": [""]
-    },
-    {
-      "tag": "music_recommendation",
-      "patterns": ["Recommend me some music", "What's a good song?", "Any music suggestions?"],
-      "responses": ["I recommend listening to...", "How about trying out..."],
-      "context": [""]
-    },
-    {
-      "tag": "technology_news",
-      "patterns": ["Tell me about the latest tech news", "What's happening in the tech world?"],
-      "responses": ["I can provide you with the latest technology news."],
-      "context": [""]
-    },
-    {
-  "tag": "book_recommendation",
-  "patterns": ["Recommend me a good book", "What's a popular book these days?", "Can you suggest a good book?", "What book should I read next?"],
-  "responses": [ "I can recommend you some great books. What genre are you interested in?"],
-  "context":[""]
-},
-  {
-      "tag": "travel_recommendation",
-      "patterns": ["Recommend me a travel destination", "Where should I travel to?", "Any travel suggestions?"],
-      "responses": ["I recommend visiting...", "How about exploring..."],
-      "context": [""]
-    },
-  {
-    "tag": "get_info",
-    "patterns": ["What is [topic]?", "Tell me about [topic]", "How does [something] work?", "Explain [concept]"],
-    "responses": ["Here's some information about [topic]", "I can provide you with information on [topic]", "Here's how [something] works"],
-    "context": ["topic or concept being asked about"]
-  },
-  {
-    "tag": "help",
-    "patterns": ["Can you help me with [task]?", "How do I [do something]?", "I need help with [problem]", "What should I do?"],
-    "responses": ["Sure, I can help you with that", "Here are the steps to [do something]", "Here are some suggestions for how to solve [problem]"],
-    "context": ["task or problem at hand"]
-  },
-  {
-    "tag": "search",
-    "patterns": ["Find me [information]", "Search for [query]", "Look up [topic]", "Where can I find [information]?"],
-    "responses": ["Here are some results for your search", "I found the following information about [query]", "Here are some resources on [topic]"],
-    "context": ["information or topic being searched for"]
-  },
-  {
-    "tag": "schedule",
-    "patterns": ["Schedule [event]", "Set a reminder for [task]", "Add [event] to my calendar", "Book [appointment]"],
-    "responses": ["I've added [event] to your calendar", "I've set a reminder for [task]", "Your appointment is booked for [date and time]"],
-    "context": ["event, task, or appointment being scheduled"]
-  },
-  {
-    "tag": "story",
-    "patterns": ["Tell me a story", "Read me a story", "Can you tell me a story about [topic]?"],
-    "responses": ["Once upon a time...", "Here's a story about [topic]", "I'll tell you a story"],
-    "context": ["topic or genre of the story"]
-  },
-  {
-    "tag": "joke",
-    "patterns": ["Tell me a joke", "Say something funny", "Make me laugh"],
-    "responses": ["Here's a joke: [joke]", "Knock knock...", "What do you call a [setup]? [punchline]"],
-    "context": ["None"]
-  },
-  {
-    "tag": "play_game",
-    "patterns": ["Let's play a game", "Can you play [game] with me?", "Do you know any games?"],
-    "responses": ["Sure, what game would you like to play?", "I know how to play [game]", "Here's a fun game we can play"],
-    "context": ["game being requested"]
-  },
-  {
-    "tag": "personal",
-    "patterns": ["What's your name?", "Where are you from?", "What do you like to do?", "Tell me about yourself"],
-    "responses": ["My name is Bard", "I'm a language model from Google AI", "I like to learn new things and help people"],
-    "context": ["None"]
-  }
+   {
+  "tag": "sports",
+  "patterns": [
+    "Sisteme kaydoldum, etkinleştirme işlemini gerçekleştirdim, sisteme giriş yapıyorum ama başvuru yapamıyorum, neden?"
+  ],
+  "responses": [
+    "Sistemde yanlış bir kullanıcı türünde (örneğin personel veya koordinatör) hesabı açmış olabilirsiniz. Başvuru yapmak için sistemde \"giden\", \"öğrenci\", \"(outgoing student)\" olarak görünmelisiniz. Koordinatörlüğümüzle irtibata geçin (erasmus@beun.edu.tr)"
+  ],
+  "context": [""]
+}
+
 ]}

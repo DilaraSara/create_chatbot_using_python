@@ -7,7 +7,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('/Users/dilarasara/create_chatbot_using_python/chatbot/intents.json').read())
+intents = json.loads(open('/Users/dilarasara/ChatBot 3/create_chatbot_using_python/chatbot/intents.json').read())
 words = []
 classes = []
 documents = []
@@ -56,7 +56,7 @@ sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=5, verbose=1)
-model.save('/Users/dilarasara/create_chatbot_using_python/chatbot/chatbot_model.h5')
+model.save('/Users/dilarasara/ChatBot 3/create_chatbot_using_python/chatbot/chatbot_model.h5')
 print('Done')
 
 

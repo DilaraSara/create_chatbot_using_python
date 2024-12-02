@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üniversite Rehberi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- İlk Sayfa -->
+        <section class="page" id="page1">
+            <div class="split left">
+                <div class="content">
+                    <img src="logo.png" alt="Logo" style="max-width: 300px; margin-bottom: 10px;">
+                    <h1>Üniversite Rehberi</h1>
+                </div>
+            </div>
+            <div class="split right no-scroll">
+                <div class="content">
+                    <div id="chatbot">
+                        <h1>Sorularınızı Sorun</h1>
+                        <div class="input-container">
+                            <input type="text" id="soru" placeholder="Soru sor...">
+                            <button id="gonderBtn">Gönder</button>
+                        </div>
+                        <div id="cevap"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İkinci Sayfa -->
+        <section class="page" id="page2">
+    <div class="content">
+        <h1>Üniversite Klavuzu</h1>
+        <div class="card-container">
+            <div class="card" onclick="openModal('Sık Sorulan Sorular')">
+                <img src="https://img.icons8.com/ios/50/000000/smartphone.png" alt="Sık Sorulan Sorular">
+                <p>Sık Sorulan Sorular</p>
+            </div>
+            <div class="card" onclick="openModal('Aklınızda Kalanlar')">
+                <img src="https://img.icons8.com/ios/50/000000/handshake.png" alt="Aklınızda Kalanlar">
+                <p>Aklınızda Kalanlar</p>
+            </div>
+            <div class="card" onclick="openModal('Merak Ettikleriniz')">
+                <img src="https://img.icons8.com/ios/50/000000/bar-chart.png" alt="Merak Ettikleriniz">
+                <p>Merak Ettikleriniz</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Üçüncü Sayfa -->
+        <section class="page" id="page3">
+            <div class="content">
+                <h1>Üniversite Rehberi</h1>
+                <h2>June 4, 2024</h2>
+                <p>Aklına takılan her türlü soruyu chatbotumuza sorabilirsiniz. Chatbot'umuz, üniversite ile ilgili sık sorulan sorular hakkında size yardımcı olacaktır.</p>
+                <button onclick="scrollToPage('page1')">SORU SOR</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
